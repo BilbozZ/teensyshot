@@ -46,7 +46,7 @@ volatile uint8_t    ESCCMD_init_flag = 0;                   // Subsystem initial
 volatile uint8_t    ESCCMD_timer_flag = 0;                  // Periodic loop enable/disable flag
 
 IntervalTimer       ESCCMD_timer;                           // Timer object
-HardwareSerial*     ESCCMD_serial[ESCCMD_NB_UART] = {       // Array of Serial objects
+HardwareSerialIMXRT*     ESCCMD_serial[ESCCMD_NB_UART] = {       // Array of Serial objects
                                                 &Serial1,
                                                 &Serial2,
                                                 &Serial3,
