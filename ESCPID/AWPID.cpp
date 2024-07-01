@@ -161,11 +161,11 @@ void AWPID_control( uint8_t i,
 
     AWPID_u0[i] = AWPID_Kp[i] * AWPID_e0[i] +
                   AWPID_ud0[i] +
-                  AWPID_ui1[i] + AWPID_Ki[i] * AWPID_e0[i];
+                  AWPID_ui1[i] + AWPID_Ki[i] * AWPID_e1[i];
 
     // No saturation
     if ( ( AWPID_u0[i] <= AWPID_Max[i] ) && ( AWPID_u0[i] >= AWPID_Min[i] ) )
-      AWPID_ui0[i] = AWPID_ui1[i] + AWPID_Kp[i] * AWPID_Ki[i] * AWPID_e0[i];
+      AWPID_ui0[i] = AWPID_ui1[i] + AWPID_Ki[i] * AWPID_e1[i];
 
     // Upper limit saturation: recalculation of the integral term
     // With this adjusment, the control signal equals exactly the saturation
